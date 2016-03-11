@@ -1,0 +1,24 @@
+
+user nginx;
+worker_processes 16;
+pid /run/nginx.pid;
+
+events {
+	worker_connections 4096;
+	multi_accept on;
+	use epoll;
+}
+
+http {
+	include /etc/nginx/mime.types;
+	default_type application/octet-stream;
+
+	access_log /var/log/nginx/access.log;
+	error_log /var/log/nginx/error.log;
+
+	server {
+        	listen *:80 default;
+		return 301 ${REDIRECT_TARGET};
+	}
+}
+
