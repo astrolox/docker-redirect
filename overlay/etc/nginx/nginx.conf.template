@@ -18,7 +18,7 @@ http {
 
 	server {
         	listen *:80 default;
-		return 301 ${REDIRECT_TARGET};
+		return ${REDIRECT_HTTP_CODE} ${REDIRECT_TARGET};
 	}
 }
 
