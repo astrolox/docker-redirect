@@ -6,14 +6,14 @@
 
 FROM alpine:latest
 
-RUN	apk update			\
+RUN	\
+	apk update			\
 	&& apk add			\
 		openssl			\
 		nginx			\
 		gettext
 
 COPY overlay/ /
-RUN chmod 755 /scripts/*
 
 WORKDIR /scripts
 EXPOSE 80
