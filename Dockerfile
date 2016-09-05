@@ -1,3 +1,9 @@
+#
+# A Docker container which redirects all received web requests.
+#
+# vi: set ts=4 ff=unix :
+#
+
 FROM alpine:latest
 
 RUN	apk update			\
