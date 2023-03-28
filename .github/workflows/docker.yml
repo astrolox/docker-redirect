@@ -6,7 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Push Docker Image to GitHub Packages
-      uses: elgohr/Publish-Docker-Github-Action@2.12
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: ${{ github.repository }}/docker-redirect
         username: ${{ github.actor }}
